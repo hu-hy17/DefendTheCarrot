@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.media.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainMenuController">
+   <children>
+      <ImageView fitHeight="906.0" fitWidth="1208.0" layoutY="-6.0" pickOnBounds="true">
+         <image>
+            <Image url="@../assets/imgs/menu/mainmenu-bg.png" />
+         </image></ImageView>
+      <ImageView fitHeight="323.0" fitWidth="391.0" layoutX="409.0" layoutY="-6.0" pickOnBounds="true">
+         <image>
+            <Image url="@../assets/imgs/menu/mainmenu-title.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="startGameBtn" fitHeight="150.0" fitWidth="200.0" layoutX="505.0" layoutY="604.0" onMouseClicked="#jmpToSelectStage" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/imgs/menu/start.png" />
+         </image>
+      </ImageView>
+   </children>
+</Pane>

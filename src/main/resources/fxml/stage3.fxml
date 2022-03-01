@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="anchorPane" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="StageController3">
+    <children>
+        <AnchorPane fx:id="backgroundPane" prefHeight="800.0" prefWidth="1200.0">
+            <children>
+                <ImageView fx:id="background" fitHeight="800.0" fitWidth="1213.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/imgs/stage3/BG3-hd.png" />
+               </image>
+                </ImageView>
+                <ImageView fx:id="route" fitHeight="600.0" fitWidth="1213.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/imgs/stage3/route3.png" />
+               </image>
+                </ImageView>
+                <ImageView fx:id="obj_2" fitHeight="80.0" fitWidth="122.0" layoutX="327.0" layoutY="520.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/imgs/stage3/obj1.png" />
+               </image>
+                </ImageView>
+                <ImageView fx:id="obj_0" fitHeight="109.0" fitWidth="103.0" layoutX="1083.0" layoutY="554.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/imgs/stage3/obj2.png" />
+               </image>
+                </ImageView>
+                <ImageView fx:id="obj_1" fitHeight="164.0" fitWidth="192.0" layoutX="1020.0" layoutY="147.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/imgs/stage3/obj3.png" />
+               </image>
+                </ImageView>
+                <ImageView fx:id="obj_3" fitHeight="87.0" fitWidth="145.0" layoutX="42.0" layoutY="507.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/imgs/stage3/obj4.png" />
+               </image>
+                </ImageView>
+                <ImageView fx:id="obj_4" fitHeight="185.0" fitWidth="167.0" layoutX="470.0" layoutY="713.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/imgs/stage3/obj5.png" />
+               </image>
+                </ImageView>
+                <ImageView fx:id="mon_start" fitHeight="102.0" fitWidth="97.0" layoutX="14.0" layoutY="209.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../assets/imgs/stage1/monster_start.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="monsterPane" layoutY="200.0" prefHeight="600.0" prefWidth="1200.0" />
+        <AnchorPane fx:id="bulletPane" layoutY="200.0" prefHeight="600.0" prefWidth="1200.0" />
+        <AnchorPane fx:id="placePane" layoutY="200.0" prefHeight="600.0" prefWidth="1200.0">
+            <children>
+                <ImageView fx:id="cancelChooser" fitHeight="600.0" fitWidth="1200.0" onMouseClicked="#placeClickCancel" pickOnBounds="true" preserveRatio="true" />
+                <ImageView fx:id="place_0" fitHeight="80.0" fitWidth="80.0" layoutX="14.0" layoutY="115.0" onMouseClicked="#placeClicked" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../assets/imgs/tower/bottle-set.png" />
+                    </image>
+                </ImageView>
+            <ImageView fx:id="place_1" fitHeight="80.0" fitWidth="80.0" layoutX="94.0" layoutY="115.0" onMouseClicked="#placeClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/imgs/tower/bottle-set.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="place_12" fitHeight="80.0" fitWidth="80.0" layoutX="14.0" layoutY="205.0" onMouseClicked="#placeClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/imgs/tower/bottle-set.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="place_13" fitHeight="80.0" fitWidth="80.0" layoutX="94.0" layoutY="205.0" onMouseClicked="#placeClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/imgs/tower/bottle-set.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="place_2" fitHeight="80.0" fitWidth="80.0" layoutX="184.0" layoutY="115.0" onMouseClicked="#placeClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/imgs/tower/bottle-set.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="place_3" fitHeight="80.0" fitWidth="80.0" layoutX="274.0" layoutY="115.0" onMouseClicked="#placeClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/imgs/tower/bottle-set.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="place_4" fitHeight="80.0" fitWidth="80.0" layoutX="364.0" layoutY="115.0" onMouseClicked="#placeClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/imgs/tower/bottle-set.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="place_5" fitHeight="80.0" fitWidth="80.0" layoutX="454.0" layoutY="115.0" onMouseClicked="#placeClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/imgs/tower/bottle-set.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="place_6" fitHeight="80.0" fitWidth="80.0" layoutX="544.0" layoutY="115.0" onMouseClicked="#placeClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/imgs/tower/bottle-set.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="place_7" fitHeight="80.0" fitWidth="80.0" layoutX="634.0" layoutY="115.0" onMouseClicked="#placeClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/imgs/tower/bottle-set.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="place_8" fitHeight="80.0" fitWidth="80.0" layoutX="724.0" layoutY="115.0" onMouseClicked="#placeClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/imgs/tower/bottle-set.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="place_9" fitHeight="80.0" fitWidth="80.0" layoutX="814.0" layoutY="115.0" onMouseClicked="#placeClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/imgs/tower/bottle-set.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="place_16" fitHeight="80.0" fitWidth="80.0" layoutX="454.0" layoutY="315.0" onMouseClicked="#placeClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/imgs/tower/bottle-set.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="place_17" fitHeight="80.0" fitWidth="80.0" layoutX="544.0" layoutY="315.0" onMouseClicked="#placeClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/imgs/tower/bottle-set.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="place_18" fitHeight="80.0" fitWidth="80.0" layoutX="634.0" layoutY="315.0" onMouseClicked="#placeClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/imgs/tower/bottle-set.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="place_19" fitHeight="80.0" fitWidth="80.0" layoutX="724.0" layoutY="315.0" onMouseClicked="#placeClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/imgs/tower/bottle-set.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="place_20" fitHeight="80.0" fitWidth="80.0" layoutX="814.0" layoutY="315.0" onMouseClicked="#placeClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/imgs/tower/bottle-set.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="place_10" fitHeight="80.0" fitWidth="80.0" layoutX="1012.0" layoutY="115.0" onMouseClicked="#placeClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/imgs/tower/bottle-set.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="place_11" fitHeight="80.0" fitWidth="80.0" layoutX="1102.0" layoutY="115.0" onMouseClicked="#placeClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/imgs/tower/bottle-set.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="place_14" fitHeight="80.0" fitWidth="80.0" layoutX="1012.0" layoutY="205.0" onMouseClicked="#placeClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/imgs/tower/bottle-set.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="place_15" fitHeight="80.0" fitWidth="80.0" layoutX="1102.0" layoutY="205.0" onMouseClicked="#placeClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/imgs/tower/bottle-set.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="place_21" fitHeight="80.0" fitWidth="80.0" layoutX="904.0" layoutY="315.0" onMouseClicked="#placeClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/imgs/tower/bottle-set.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="place_22" fitHeight="80.0" fitWidth="80.0" layoutX="1012.0" layoutY="315.0" onMouseClicked="#placeClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/imgs/tower/bottle-set.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="place_23" fitHeight="80.0" fitWidth="80.0" layoutX="634.0" layoutY="506.0" onMouseClicked="#placeClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/imgs/tower/bottle-set.png" />
+               </image>
+            </ImageView>
+                <ImageView fx:id="tower_anchor" fitHeight="80.0" fitWidth="80.0" onMouseClicked="#setTower" pickOnBounds="true" preserveRatio="true" visible="false">
+                    <image>
+                        <Image url="@../assets/imgs/tower/anchor.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="tower_arrow" fitHeight="80.0" fitWidth="80.0" onMouseClicked="#setTower" pickOnBounds="true" preserveRatio="true" visible="false">
+                    <image>
+                        <Image url="@../assets/imgs/tower/arrow.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="tower_snow" fitHeight="80.0" fitWidth="80.0" onMouseClicked="#setTower" pickOnBounds="true" preserveRatio="true" visible="false">
+                    <image>
+                        <Image url="@../assets/imgs/tower/snow.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="tower_bottle" fitHeight="80.0" fitWidth="80.0" onMouseClicked="#setTower" pickOnBounds="true" preserveRatio="true" visible="false">
+                    <image>
+                        <Image url="@../assets/imgs/tower/bottle.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="tower_sun" fitHeight="80.0" fitWidth="80.0" onMouseClicked="#setTower" pickOnBounds="true" preserveRatio="true" visible="false">
+                    <image>
+                        <Image url="@../assets/imgs/tower/sun.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="removeTower" fitHeight="80.0" fitWidth="80.0" onMouseClicked="#removeTower" pickOnBounds="true" preserveRatio="true" />
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="menuPane" prefHeight="200.0" prefWidth="1200.0">
+            <children>
+                <ImageView fitHeight="150.0" fitWidth="914.0" layoutX="134.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../assets/imgs/item/gamemenu-bg.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="pauseBtn" fitHeight="60.0" fitWidth="59.0" layoutX="897.0" layoutY="9.0" onMouseClicked="#pauseBtnClicked" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../assets/imgs/item/stop.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="menuBtn" fitHeight="57.0" fitWidth="53.0" layoutX="977.0" layoutY="10.0" onMouseClicked="#showMenuBtnClicked" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../assets/imgs/item/call-menu.png" />
+                    </image>
+                </ImageView>
+                <Label fx:id="coinNum" layoutX="218.0" layoutY="12.0" prefHeight="34.0" prefWidth="105.0" text="000" textFill="WHITE">
+                    <font>
+                        <Font name="Algerian" size="30.0" />
+                    </font>
+                </Label>
+                <Label fx:id="curWave" layoutX="591.0" layoutY="2.0" prefHeight="54.0" prefWidth="49.0" style="-fx-background-color: transparent; -fx-text-inner-color: white;" text="01" textFill="#00ff7b">
+                    <font>
+                        <Font name="Algerian" size="30.0" />
+                    </font>
+                </Label>
+                <Label layoutX="485.0" layoutY="2.0" prefHeight="54.0" prefWidth="122.0" style="-fx-background-color: transparent; -fx-text-inner-color: yellow;" text="wave" textFill="#f8f807">
+                    <font>
+                        <Font name="Algerian" size="30.0" />
+                    </font>
+                </Label>
+                <Label fx:id="totalWave" layoutX="632.0" layoutY="2.0" prefHeight="54.0" prefWidth="122.0" style="-fx-background-color: transparent; -fx-text-inner-color: white;" text="/15" textFill="WHITE">
+                    <font>
+                        <Font name="Algerian" size="30.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="gameMenuPane" prefHeight="800.0" prefWidth="1200.0" visible="false">
+            <children>
+                <Pane opacity="0.39" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: grey;" />
+                <ImageView fitHeight="346.0" fitWidth="386.0" layoutX="407.0" layoutY="218.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../assets/imgs/menu/game-menu.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="resumeBtn" fitHeight="74.0" fitWidth="231.0" layoutX="474.0" layoutY="237.0" onMouseClicked="#resumeGameBtnClicked" pickOnBounds="true">
+                    <image>
+                        <Image url="@../assets/imgs/menu/continue.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="restartBtn" fitHeight="74.0" fitWidth="238.0" layoutX="474.0" layoutY="319.0" onMouseClicked="#gameRestartBtnClicked" pickOnBounds="true">
+                    <image>
+                        <Image url="@../assets/imgs/menu/restart.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="goToSelectBtn" fitHeight="74.0" fitWidth="231.0" layoutX="473.0" layoutY="399.0" onMouseClicked="#jmpSelectStage" pickOnBounds="true">
+                    <image>
+                        <Image url="@../assets/imgs/menu/select.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="gameOverPane" prefHeight="800.0" prefWidth="1200.0" visible="false">
+            <children>
+                <Pane opacity="0.39" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: grey;" />
+                <ImageView fitHeight="584.0" fitWidth="907.0" layoutX="176.0" layoutY="94.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../assets/imgs/menu/gameOver.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="restartBtn1" fitHeight="74.0" fitWidth="238.0" layoutX="622.0" layoutY="470.0" onMouseClicked="#gameRestartBtnClicked" pickOnBounds="true">
+                    <image>
+                        <Image url="@../assets/imgs/menu/restart.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="goToSelectBtn1" fitHeight="74.0" fitWidth="231.0" layoutX="341.0" layoutY="470.0" onMouseClicked="#jmpSelectStage" pickOnBounds="true">
+                    <image>
+                        <Image url="@../assets/imgs/menu/select.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="stageFinishPane" prefHeight="200.0" prefWidth="200.0" visible="false">
+            <children>
+                <Pane opacity="0.39" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: grey;" visible="false" />
+                <ImageView fitHeight="584.0" fitWidth="907.0" layoutX="171.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../assets/imgs/menu/stageFinish.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="goToSelectBtn11" fitHeight="74.0" fitWidth="231.0" layoutX="637.0" layoutY="477.0" onMouseClicked="#jmpSelectStage" pickOnBounds="true">
+                    <image>
+                        <Image url="@../assets/imgs/menu/select.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="restartBtn11" fitHeight="74.0" fitWidth="238.0" layoutX="350.0" layoutY="477.0" onMouseClicked="#gameRestartBtnClicked" pickOnBounds="true">
+                    <image>
+                        <Image url="@../assets/imgs/menu/restart.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

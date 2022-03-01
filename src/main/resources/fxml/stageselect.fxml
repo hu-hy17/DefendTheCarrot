@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="StageSelectController">
+   <children>
+      <ImageView fitHeight="800.0" fitWidth="1200.0" onMouseClicked="#jmpStage3" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/imgs/menu/select-bg.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="stage1Btn" fitHeight="221.0" fitWidth="263.0" layoutX="55.0" layoutY="105.0" onMouseClicked="#jmpStage1" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/imgs/menu/stage_1.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="stage2Btn" fitHeight="221.0" fitWidth="263.0" layoutX="369.0" layoutY="105.0" onMouseClicked="#jmpStage2" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/imgs/menu/stage_2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="stage3Btn" fitHeight="221.0" fitWidth="263.0" layoutX="687.0" layoutY="105.0" onMouseClicked="#jmpStage3" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/imgs/menu/stage_3.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="500.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/imgs/menu/select-word.png" />
+         </image></ImageView>
+   </children>
+</AnchorPane>
