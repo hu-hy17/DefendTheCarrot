@@ -1,5 +1,5 @@
 # DefendTheCarrot
-![](E:\ProjectManage\DefendTheCarrot\teaser.png)
+![](teaser.png)
 
 ####  简介
 
