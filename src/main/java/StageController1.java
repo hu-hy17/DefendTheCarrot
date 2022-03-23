@@ -1,4 +1,3 @@
-import com.sun.javafx.robot.impl.FXRobotHelper;
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
