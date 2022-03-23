@@ -51,8 +51,7 @@ public class MyPlace {
         }
 
         // 设置音效
-        File soundFile = new File(Utils.towerAttackSound[type]);
-        this.attackSound = new Media(soundFile.toURI().toString());
+        this.attackSound = new Media(Utils.towerAttackSound[type]);
 
         // 更新UI
         Platform.runLater(()-> {
@@ -106,12 +105,12 @@ public class MyPlace {
         }
         try {
             this.soundPlayer.stop();
-        } catch (Exception e) {}
+        } catch (Exception ignored) {}
         // 播放声音
         try {
             this.soundPlayer = new MediaPlayer(attackSound);
             Platform.runLater(() -> this.soundPlayer.play());
-        } catch (Exception e) {}
+        } catch (Exception ignored) {}
     }
 
     public void generateRangeAttack(LinkedList<MyMonster> targets) {
@@ -136,7 +135,7 @@ public class MyPlace {
         try {
             this.soundPlayer = new MediaPlayer(attackSound);
             Platform.runLater(() -> this.soundPlayer.play());
-        } catch (Exception e) {}
+        } catch (Exception ignored) {}
     }
 
     public void update() {

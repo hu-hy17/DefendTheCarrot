@@ -21,6 +21,9 @@ public class Utils {
     static final int TOWER_ANCHOR = 4;
     static final String towerSrcRoot = "assets/imgs/tower/";   // tower资源文件根目录
     static final String[] towerName = {"bottle", "sun", "snow", "arrow", "anchor"};
+    static final String graySuffix = "-gray";
+    static final String setSuffix = "-set";
+    static final String returnSuffix = "-return";
 
     // 防御塔属性
     static final int[] towerInstantDamage = {15, 20, 0, 8, 25};
@@ -154,17 +157,17 @@ public class Utils {
     }
 
     // 音效
-    static final String soundResPath = "assets/mp3/";
-    static final String mainBgmSound = Objects.requireNonNull(Utils.class.getResource(soundResPath + "mainMenuBgm.mp3")).getFile();
+    static final String soundResPath = "/assets/mp3/";
+    static final String mainBgmSound = Objects.requireNonNull(Utils.class.getResource(soundResPath + "mainMenuBgm.mp3")).toString();
     static final String[] towerAttackSound = {
-            Objects.requireNonNull(Utils.class.getResource(soundResPath + "Bottle.mp3")).getFile(),
-            Objects.requireNonNull(Utils.class.getResource(soundResPath + "Sun.mp3")).getFile(),
-            Objects.requireNonNull(Utils.class.getResource(soundResPath + "Snow.mp3")).getFile(),
-            Objects.requireNonNull(Utils.class.getResource(soundResPath + "Arrow.mp3")).getFile(),
-            Objects.requireNonNull(Utils.class.getResource(soundResPath + "Anchor.mp3")).getFile(),
+            Objects.requireNonNull(Utils.class.getResource(soundResPath + "Bottle.mp3")).toString(),
+            Objects.requireNonNull(Utils.class.getResource(soundResPath + "Sun.mp3")).toString(),
+            Objects.requireNonNull(Utils.class.getResource(soundResPath + "Snow.mp3")).toString(),
+            Objects.requireNonNull(Utils.class.getResource(soundResPath + "Arrow.mp3")).toString(),
+            Objects.requireNonNull(Utils.class.getResource(soundResPath + "Anchor.mp3")).toString(),
     };
-    static final String carrotInjureSound = Objects.requireNonNull(Utils.class.getResource(soundResPath + "Injure.mp3")).getFile();
-    static final String gameWinSound = Objects.requireNonNull(Utils.class.getResource(soundResPath + "GameWin.mp3")).getFile();
-    static final String gameLoseSound = Objects.requireNonNull(Utils.class.getResource(soundResPath + "GameLose.mp3")).getFile();
+    static final String carrotInjureSound = Objects.requireNonNull(Utils.class.getResource(soundResPath + "Injure.mp3")).toString();
+    static final String gameWinSound = Objects.requireNonNull(Utils.class.getResource(soundResPath + "GameWin.mp3")).toString();
+    static final String gameLoseSound = Objects.requireNonNull(Utils.class.getResource(soundResPath + "GameLose.mp3")).toString();
     static final int bgmCycleTimes = 1000;
 }

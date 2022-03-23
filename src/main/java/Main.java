@@ -21,7 +21,7 @@ public class Main extends Application {
 
     public static String getRealPath()
     {
-        String realPath = Main.class.getClassLoader().getResource("")
+        String realPath = Objects.requireNonNull(Main.class.getClassLoader().getResource(""))
                 .getFile();
         java.io.File file = new java.io.File(realPath);
         realPath = file.getParentFile().getAbsolutePath(); //获取jar包的上级目录

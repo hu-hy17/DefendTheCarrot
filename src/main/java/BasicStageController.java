@@ -14,6 +14,7 @@ import javafx.scene.media.MediaPlayer;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -75,9 +76,27 @@ public class BasicStageController{
 
     MediaPlayer bgmPlayer;
 
+    public interface coinChangeListener{
+        void coinChange(int newNum);
+    }
+
+    private ArrayList<MyTower> towerSetters;
+
     protected void gameInit() {
         // 初始化stage_manager
         stageManager = new StageManager(placeNum, stageId, monsterPane, monsterOrder);
+
+        // 初始化防御塔设置
+        towerSetters = new ArrayList<>(5);
+        towerSetters.add(new MyTower(tower_bottle, Utils.TOWER_BOTTLE));
+        towerSetters.add(new MyTower(tower_sun, Utils.TOWER_SUN));
+        towerSetters.add(new MyTower(tower_snow, Utils.TOWER_SNOW));
+        towerSetters.add(new MyTower(tower_arrow, Utils.TOWER_ARROW));
+        towerSetters.add(new MyTower(tower_anchor, Utils.TOWER_ANCHOR));
+
+        coinChangeListener listener = this::updateTowerChooser;
+        stageManager.addCoinChangeListener(listener);       // 添加金币变更事件监听
+
         // 初始化放置位数组
         ObservableList<Node> nodeList = placePane.getChildren();
         for(Node x:nodeList) {
@@ -147,8 +166,7 @@ public class BasicStageController{
 
         // 初始化bgm播放器
         // 设置bgm播放器
-        File file =  new File(Utils.mainBgmSound);
-        Media media1 = new Media(file.toURI().toString());
+        Media media1 = new Media(Utils.mainBgmSound);
         bgmPlayer = new MediaPlayer(media1);
         bgmPlayer.setCycleCount(Utils.bgmCycleTimes);
         bgmPlayer.play();
@@ -201,21 +219,22 @@ public class BasicStageController{
     */
     public void setTowerChooser(Boolean hasSet, Boolean show, double posX, double posY) {
         if(!show) {
-            tower_anchor.setVisible(false);
-            tower_arrow.setVisible(false);
-            tower_snow.setVisible(false);
-            tower_sun.setVisible(false);
-            tower_bottle.setVisible(false);
+            for(MyTower tower : towerSetters) {
+                tower.getChooserView().setVisible(false);
+            }
             removeTower.setVisible(false);
             return;
         }
         // 没有放置防御塔，
         if(!hasSet) {
-            tower_anchor.setVisible(true);
-            tower_arrow.setVisible(true);
-            tower_snow.setVisible(true);
-            tower_sun.setVisible(true);
-            tower_bottle.setVisible(true);
+            for(MyTower tower : towerSetters) {
+                if(tower.isAffordable()) {
+                    tower.getChooserView().setImage(tower.getActiveImg());
+                } else {
+                    tower.getChooserView().setImage(tower.getNotActiveImg());
+                }
+                tower.getChooserView().setVisible(true);
+            }
             removeTower.setVisible(false);
 
             tower_bottle.setLayoutX(posX);
@@ -240,19 +259,30 @@ public class BasicStageController{
             }
         } else {
             // 设置移除菜单
-            tower_anchor.setVisible(false);
-            tower_arrow.setVisible(false);
-            tower_snow.setVisible(false);
-            tower_sun.setVisible(false);
-            tower_bottle.setVisible(false);
+            for(MyTower tower : towerSetters) {
+                tower.getChooserView().setVisible(false);
+            }
             int cPlace = stageManager.chosenPlace;
             if(cPlace >= 0 && cPlace < stageManager.placeNum) {
-                String towerName = Utils.towerName[stageManager.placesArr[cPlace].getTowerId()];
-                String imgPath = Utils.towerSrcRoot + towerName + "-return.png";
-                removeTower.setImage(new Image(imgPath));
+                int towerType = stageManager.placesArr[cPlace].getTowerId();
+                removeTower.setImage(towerSetters.get(towerType).getReturnImg());
                 removeTower.setLayoutX(posX);
                 removeTower.setLayoutY(posY-Utils.placeLength);
                 removeTower.setVisible(true);
+            }
+        }
+    }
+
+    // 根据金币数量更新每个塔能否购买
+    protected void updateTowerChooser(int coinNum) {
+        for(MyTower tower : towerSetters) {
+            tower.setAffordable(coinNum >= tower.getCost());
+            if(tower.getChooserView().isVisible()) {
+                if(tower.isAffordable()) {
+                    tower.getChooserView().setImage(tower.getActiveImg());
+                } else {
+                    tower.getChooserView().setImage(tower.getNotActiveImg());
+                }
             }
         }
     }
@@ -331,17 +361,15 @@ public class BasicStageController{
 
     protected void gameOver() {
         this.gameOverPane.setVisible(true);
-        File file = new File(Utils.gameLoseSound);
-        MediaPlayer m = new MediaPlayer(new Media(file.toURI().toString()));
+        MediaPlayer m = new MediaPlayer(new Media(Utils.gameLoseSound));
         Platform.runLater(m::play);
         pauseGame();
     }
 
     protected void stageFinish() {
         this.stageFinishPane.setVisible(true);
-        File file = new File(Utils.gameWinSound);
-        MediaPlayer m = new MediaPlayer(new Media(file.toURI().toString()));
-        Platform.runLater(()->m.play());
+        MediaPlayer m = new MediaPlayer(new Media(Utils.gameWinSound));
+        Platform.runLater(m::play);
         pauseGame();
     }
 

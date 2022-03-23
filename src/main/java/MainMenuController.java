@@ -17,8 +17,7 @@ public class MainMenuController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         // 设置bgm播放器
-        File file =  new File(Utils.mainBgmSound);
-        Media bgmMedia = new Media(file.toURI().toString());
+        Media bgmMedia = new Media(Utils.mainBgmSound);
         bgmPlayer = new MediaPlayer(bgmMedia);
         bgmPlayer.setCycleCount(Utils.bgmCycleTimes);
         bgmPlayer.play();

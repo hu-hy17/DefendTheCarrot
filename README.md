@@ -1,2 +1,6 @@
 # DefendTheCarrot
- A simple java version of a classical mobile game DefendTheCarrot(经典塔防游戏《包围萝卜》的java仿制版)
+####  简介
+
+​	这是一个使用JavaFx开发的经典塔防游戏《保卫萝卜》的仿制版本
+
+#### 

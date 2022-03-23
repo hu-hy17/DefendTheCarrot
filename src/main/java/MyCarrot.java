@@ -63,8 +63,7 @@ public class MyCarrot {
         this.hp--;
         this.injured = Boolean.TRUE;
         this.animationCount = 0;
-        File file = new File(Utils.carrotInjureSound);
-        MediaPlayer m = new MediaPlayer(new Media(file.toURI().toString()));
+        MediaPlayer m = new MediaPlayer(new Media(Utils.carrotInjureSound));
         Platform.runLater(()->{
             m.play();
             imageView.setImage(new Image(Utils.carrotImgSrc+"carrot_injure.png"));

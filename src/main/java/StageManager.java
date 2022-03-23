@@ -24,10 +24,12 @@ public class StageManager {
     private int generateCount = 0;
     private int[][] monsterOrder;
     private Boolean waveFinish = Boolean.FALSE;
+
     // 参数
     private int coinNum;
     private int currentWave;
     private int totalWave;
+    private BasicStageController.coinChangeListener onCoinChange;
     public int getCoinNum() { return coinNum; }
 
     public int getCurrentWave() { return currentWave; }
@@ -78,6 +80,11 @@ public class StageManager {
         },0, Utils.updateInterval);
     }
 
+    public void addCoinChangeListener(BasicStageController.coinChangeListener listener) {
+        this.onCoinChange = listener;
+        listener.coinChange(this.coinNum);
+    }
+
     private int[] judgeDir(int segId) {
         if( (segId + 1) >= routeX.length) {
             return new int[]{0,0};
@@ -123,6 +130,7 @@ public class StageManager {
             else if(stat == Utils.MONSTER_KILLED) {
                 // 如果怪物被消灭，加钱
                 this.coinNum += Utils.killMonsterReward;
+                this.onCoinChange.coinChange(this.coinNum);
             }
             if(!m.alive) {
                 // 怪物死亡，清除imageView,hpView，并删除链表项
@@ -296,6 +304,7 @@ public class StageManager {
             if(this.coinNum >= Utils.towerCost[type]) {
                 this.placesArr[cPlace].setTower(type, towerName);
                 this.coinNum -= Utils.towerCost[type];
+                this.onCoinChange.coinChange(this.coinNum);
             }
         }
     }
@@ -303,6 +312,7 @@ public class StageManager {
     public void removeTower(int cPlace) {
         if(this.placesArr[cPlace].isPlant == Boolean.TRUE) {
             this.coinNum += Utils.towerCostReturn[placesArr[cPlace].getTowerId()];
+            this.onCoinChange.coinChange(this.coinNum);
             this.placesArr[cPlace].removeTower();
         }
     }
